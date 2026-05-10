@@ -1,0 +1,54 @@
+# Git
+.git/
+.gitignore
+.gitattributes
+.github/
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+Makefile
+config.status
+config.log
+config.h
+stamp-h1
+autom4te.cache/
+
+# Platform-specific
+vcproj/
+Hercules.xcodeproj/
+*.sln
+*.vcxproj
+*.filters
+
+# Test files
+test/
+
+# CI/CD
+.gitlab-ci.yml
+appveyor.yml
+
+# Documentation (optional - doc/ is copied for script reference)
+# doc/
+
+# Logs and runtime data (generated at container runtime)
+log/*
+save/*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+.env
+.env.example
