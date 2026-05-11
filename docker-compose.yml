@@ -97,6 +97,7 @@ services:
     ports:
       - "${MAP_PORT:-5121}:${MAP_PORT:-5121}"
     volumes:
+      - ./conf/import:/opt/hercules/conf/import
       - ./save:/opt/hercules/save
       - ./log:/opt/hercules/log
     depends_on:
@@ -136,6 +137,17 @@ services:
       mysql:
         condition: service_healthy
       char-server:
+        condition: service_healthy
+    restart: unless-stopped
+
+  adminer:
+    image: adminer:latest
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
+    ports:
+      - "8000:8080"
+    depends_on:
+      mysql:
         condition: service_healthy
     restart: unless-stopped
 
