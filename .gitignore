@@ -148,3 +148,5 @@ Thumbs.db
 
 # visual studio
 /.vs/
+
+.env
